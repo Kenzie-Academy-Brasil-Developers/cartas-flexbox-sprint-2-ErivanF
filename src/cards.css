@@ -10,6 +10,7 @@ html {
 
 .card {
     /* display, flex-direction */
+    display: flex;
     border: 1px solid #CAD0D2;
     border-radius: 4px;
     overflow: hidden;
@@ -26,7 +27,8 @@ html {
     color: #57727C;
     font-size: 12px;
     text-align: center;
-    max-width: calc(100% - 30px);
+    /* max-width: calc(100% - 30px); */
+    /* Aparentemente, essa linha deixava o texto e os ícones desalinhados */
 }
 
 .card__price {
@@ -41,23 +43,56 @@ html {
 
 .cardGroup {
     /* display */
-  
+    display: flex;
+    margin: 0 auto;
     border: 1px solid #CAD0D2;
     border-radius: 4px;
     overflow: hidden;
+    max-width: 300;
+    flex-direction: column;
+    /* Na minha opinião, colocar as opções em
+     coluna fica melhor para mobile */
   }
-  
+ 
+
+
     .cardGroup__card {
       /* flex-grow, flex-shrink, flex-basis */
-  
+      flex-basis: 130px;
       border: none;
       border-radius: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-content: center;
     }
   
     .cardGroup__card {
+    
       border-left: 1px solid #D7DBDD;
     }
   
     .cardGroup__cardDescription {
+      text-align: center;
+      
       /* flex-grow, flex-shrink, flex-basis */
     }
+@media (min-width: 700px){
+  .cardGroup{
+    margin: 0 auto;
+    max-width: 710px;
+    flex-direction: row;
+    
+  }
+  .cardGroup__card {
+    /* flex-grow, flex-shrink, flex-basis */
+    flex-basis: 300px;
+    border: none;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+  }
+
+}
